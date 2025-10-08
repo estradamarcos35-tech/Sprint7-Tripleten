@@ -3,7 +3,7 @@ import pandas as pd
 import plotly_express as pt
 
 st.header('US vehicles car sale')
-
+hist_button = st.button('Construir histograma')
 
 car_data = pd.read_csv(r'C:\Users\marko\ProyectosPython\Sprint7-Tripleten\vehicles_us.csv')
 
@@ -46,12 +46,12 @@ print(car_data.sample(10))
 
 if hist_button:
     st.write('Creación de un histograma para el conjunto de datos de anuncios de venta de coches')
-    fig = px.histogram(car_data, x="odometer")
+    fig = pt.histogram(car_data, x="odometer")
     st.plotly_chart(fig, use_container_width=True)
     
 scatter_button = st.button('Mostrar gráfico de dispersión')
 
 if scatter_button:
     st.write('Relación entre el odómetro y el precio')
-    fig2 = px.scatter(car_data, x='odometer', y='price')
+    fig2 = pt.scatter(car_data, x='odometer', y='price')
     st.plotly_chart(fig2, use_container_width=True)
