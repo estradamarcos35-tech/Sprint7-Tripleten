@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import plotly_express as pt
-
+import os
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 csv_path = os.path.join(BASE_DIR, 'data', 'vehicles_us.csv')
