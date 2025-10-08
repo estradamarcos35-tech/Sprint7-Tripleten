@@ -3,7 +3,10 @@ import pandas as pd
 import plotly_express as pt
 
 
-car_data = pd.read_csv(r'C:\Users\marko\ProyectosPython\Sprint7-Tripleten\vehicles_us.csv')
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+csv_path = os.path.join(BASE_DIR, 'data', 'vehicles_us.csv')
+
+car_data = pd.read_csv(csv_path)
 
 #Revisamos cómo están nuestros datos.
 car_data.info(10)
