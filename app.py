@@ -19,10 +19,6 @@ car_data = car_data.astype({
     'is_4wd': 'object',
 })
 
-
-car_data['model_year'] = car_data['model_year'].astype(str).str.replace(r'\.0$', '', regex=True)
-car_data['model_year'] = car_data['model_year'].replace('nan', 'unknown')
-
 #Hacemos conversión de la columna "date_posted" para acceder a ella como fecha, en caso de necesitar acceder a ella en un futuro.
 car_data['date_posted'] = pd.to_datetime(car_data['date_posted'])
 
